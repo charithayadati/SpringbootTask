@@ -43,7 +43,6 @@ public class TrackController {
         return new ResponseEntity<List<Track>>(trackService.getAllTracks(), HttpStatus.OK);
     }
 
-    // Implementing PUT method
     @PutMapping("updateTrack")
     public ResponseEntity<?> updateTrack(@RequestBody Track track)
     {
@@ -59,7 +58,7 @@ public class TrackController {
         return responseEntity;
     }
 
-    // Implementing DELETE method
+
     @DeleteMapping(value="deleteTrack/{id}")
     public ResponseEntity<?> deleteTrack(@PathVariable("id") int id) {
         ResponseEntity responseEntity;
