@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class TrackServiceImpl implements TrackService{
+
     @Autowired
     TrackRepository trackRepository;
 
@@ -20,7 +21,6 @@ public class TrackServiceImpl implements TrackService{
     public boolean saveTrack(Track track) {
         Track saveduser=trackRepository.save(track);
         return  true;
-
     }
 
     @Override
@@ -51,6 +51,11 @@ public class TrackServiceImpl implements TrackService{
     public boolean UpdateTrack(Track track) {
         return true;
     }
+
+    @Override
+    public List<Track> getTrackByName(String name) {
+        return getTrackByName(name);
     }
+}
 
 
