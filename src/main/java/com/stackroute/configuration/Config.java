@@ -15,4 +15,21 @@ public class Config {
         registrationBean.addUrlMappings("/console/*");
         return registrationBean;
     }
+        @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2).select()
+                .apis(RequestHandlerSelectors
+                        .basePackage("com.stackroute.Muzix.controller"))
+                .paths(PathSelectors.regex("/.*"))
+                .build().apiInfo(apiEndPointsInfo()).tags(new Tag("Track Controller", "Operations pertaining to Tracks in Track Management"));
+    }
+    private ApiInfo apiEndPointsInfo() {
+        return new ApiInfoBuilder().title("Spring Boot REST API")
+                .description("Track Management REST API")
+
+                .license("Apache 2.0")
+                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .version("1.0.0")
+                .build();
+    }
 }
