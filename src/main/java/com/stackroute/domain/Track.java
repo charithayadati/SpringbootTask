@@ -8,8 +8,19 @@ import javax.persistence.Id;
 
 public class Track {
 
+    public Track() {
+    }
+
     @Id
     private int id;
+    private String name;
+    private String comment;
+
+    public Track(int id, String name, String comment) {
+        this.id = id;
+        this.name = name;
+        this.comment = comment;
+    }
 
     public int getId() {
         return id;
@@ -19,7 +30,6 @@ public class Track {
         this.id = id;
     }
 
-    private String name;
     public String getName() {
         return name;
     }
@@ -28,9 +38,6 @@ public class Track {
         this.name = name;
     }
 
-
-    private String comment;
-
     public String getComment() {
         return comment;
     }
@@ -38,5 +45,4 @@ public class Track {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
 }
