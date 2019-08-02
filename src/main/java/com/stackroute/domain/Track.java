@@ -1,14 +1,10 @@
 package com.stackroute.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 
 public class Track {
 //implementing getter and setter methods for the literals
-    @Id
+
     private int id;
 
     public int getId() {
