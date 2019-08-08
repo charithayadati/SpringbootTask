@@ -37,9 +37,9 @@ public class TrackServiceImpl implements TrackService{
     }
 //saves the new track
     @Override
-    public boolean saveTrack(Track track) throws TrackAlreadyExistException{
+    public Track saveTrack(Track track) throws TrackAlreadyExistException{
         Track savedtrack=trackRepository.save(track);
-        return  true;
+        return  savedtrack;
 
     }
 
