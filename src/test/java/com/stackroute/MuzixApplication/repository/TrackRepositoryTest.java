@@ -24,8 +24,8 @@ import static org.mockito.Mockito.when;
 public class TrackRepositoryTest {
 
     @Autowired
-    TrackRepository trackRepository;
-    Track track;
+   private TrackRepository trackRepository;
+    private Track track;
 
     @Before
     public void setUp()
