@@ -18,12 +18,13 @@ public class TrackController {
     public TrackController(TrackService trackService) {
         this.trackService = trackService;
     }
+    
+        ResponseEntity<?> responseEntity;
 
 //maps the savetrack request
    @PostMapping("saveTrack")
     public ResponseEntity<?> saveTrack(@RequestBody Track track)
     {
-        ResponseEntity<?> responseEntity;
         try{
             trackService.saveTrack(track);
             responseEntity=new ResponseEntity<String>("Successfully created", HttpStatus.CREATED);
@@ -48,7 +49,6 @@ public class TrackController {
     @PutMapping("track")
     public ResponseEntity<?> updateTrack(@RequestBody Track track)
     {
-        ResponseEntity responseEntity;
         try{
             trackService.UpdateTrack(track);
             responseEntity=new ResponseEntity("Successfully updated", HttpStatus.CREATED);
@@ -63,7 +63,6 @@ public class TrackController {
     // Implementing DELETE method
     @DeleteMapping(value="/track")
     public ResponseEntity<?> deleteTrack(@PathVariable("id") int id) {
-        ResponseEntity responseEntity;
         try {
             trackService.deleteTrack(id);
             responseEntity = new ResponseEntity("Successfully deleted", HttpStatus.OK);
