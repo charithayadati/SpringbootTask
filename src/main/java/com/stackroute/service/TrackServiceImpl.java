@@ -65,7 +65,10 @@ public class TrackServiceImpl implements TrackService{
 //updates the track
     @Override
     public boolean UpdateTrack(Track track) {
-        return true;
+	    if(Track.getId.(exists)){
+        return true;}
+	    else
+		return false;
     }
 //fetches all the tracks
     @Override
