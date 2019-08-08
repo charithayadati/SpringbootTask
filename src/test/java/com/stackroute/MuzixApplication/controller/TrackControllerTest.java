@@ -60,7 +60,7 @@ public class TrackControllerTest {
 
     @Test
     public void saveTrack() throws Exception {
-        when(trackService.saveTrack(any())).thenReturn(true);
+        when(trackService.saveTrack(any())).thenReturn(track);
         mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/saveTrack")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(track)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
